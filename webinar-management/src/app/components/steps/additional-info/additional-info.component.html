@@ -1,0 +1,42 @@
+<div class="additional-info-container">
+  <div class="form-content" [formGroup]="parentForm">
+    <div class="form-section">
+      <h4>Event Description</h4>
+      <mat-form-field appearance="outline" class="full-width">
+        <textarea matInput
+                  formControlName="description"
+                  rows="4"
+                  placeholder="Provide a brief description of your event to inform attendees. For example: 'Join us for key insights in [industry] with expert speakers and networking opportunities.'">
+        </textarea>
+        <button mat-button
+                type="button"
+                class="generate-ai-btn"
+                (click)="generateAIDescription()">
+          <mat-icon>auto_awesome</mat-icon>
+          Generate description using AI
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="form-section">
+      <h4>Event Organizer</h4>
+      <mat-form-field appearance="outline">
+        <mat-label>Company Name</mat-label>
+        <input matInput
+               formControlName="organizerName"
+               placeholder="Enter your company name">
+      </mat-form-field>
+    </div>
+
+    <div class="form-section">
+      <mat-form-field appearance="outline">
+        <mat-label>Support Email</mat-label>
+        <input matInput
+               type="email"
+               formControlName="supportEmail"
+               placeholder="johndoe@gmail.com">
+        <mat-hint>This email will be visible to attendees for support inquiries</mat-hint>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

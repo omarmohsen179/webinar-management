@@ -1,0 +1,41 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <!-- Logo -->
+    <a href="/" class="logo">
+      <!-- <img src="assets/streavent-logo.svg" alt="Streavent"> -->
+    </a>
+    
+    <!-- Navigation Links -->
+    <div class="nav-links">
+      <a href="/events" class="active">All Events</a>
+      <a href="/teams">All Teams</a>
+      <a href="/user-management">User Management</a>
+    </div>
+  </div>
+
+  <div class="navbar-right">
+    <!-- User Guide -->
+    <a href="/guide" class="nav-item">
+      <span>User Guide</span>
+    </a>
+    
+    <!-- Notifications -->
+    <button class="nav-item notifications">
+      <i class="bell-icon"></i>
+    </button>
+    
+    <!-- Language Selector -->
+    <div class="nav-item language-selector">
+      <!-- <img src="assets/us-flag.svg" alt="Language"> -->
+    </div>
+    
+    <!-- User Profile -->
+    <div class="nav-item user-profile">
+      <!-- <img src="assets/avatar.jpg" alt="Profile" class="avatar"> -->
+    </div>
+  </div>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

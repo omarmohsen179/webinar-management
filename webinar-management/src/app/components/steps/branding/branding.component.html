@@ -1,0 +1,72 @@
+<div class="branding-container">
+
+  <div class="domain-section" [formGroup]="parentForm">
+    <h4>Domain</h4>
+    <mat-form-field appearance="outline" class="domain-input">
+      <input matInput
+             placeholder="Enter your event name"
+             formControlName="domain"
+             (input)="validateDomain($event)"
+             [maxlength]="50">
+      <mat-hint>In case of long event name you can use abbreviations. E.g. DGLJ21.strevent.de</mat-hint>
+      <div class="domain-suffix">.strevent.de</div>
+    </mat-form-field>
+  </div>
+
+  <div class="colors-section" [formGroup]="parentForm">
+    <h4>Colors & Preview</h4>
+    <div class="colors-grid">
+      <div class="color-picker">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Background Color</mat-label>
+          <input matInput
+                 [formControlName]="'primaryColor'"
+                 [value]="parentForm.get('primaryColor')?.value"
+                 placeholder="#000000">
+          <input matPrefix
+                 type="color"
+                 [formControlName]="'primaryColor'"
+                 class="color-input">
+        </mat-form-field>
+      </div>
+
+      <div class="color-picker">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Text Color</mat-label>
+          <input matInput
+                 [formControlName]="'secondaryColor'"
+                 [value]="parentForm.get('secondaryColor')?.value"
+                 placeholder="#FFFFFF">
+          <input matPrefix
+                 type="color"
+                 [formControlName]="'secondaryColor'"
+                 class="color-input">
+        </mat-form-field>
+      </div>
+
+      <div class="color-picker">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Contrast Color</mat-label>
+          <input matInput
+                 [formControlName]="'contrastColor'"
+                 [value]="parentForm.get('contrastColor')?.value"
+                 placeholder="#197DD2">
+          <input matPrefix
+                 type="color"
+                 [formControlName]="'contrastColor'"
+                 class="color-input">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="preview-section">
+      <div class="preview-card">
+        <div class="preview-image">
+          <!-- Preview illustration would go here -->
+        </div>
+        <p class="preview-text">Colors you choose will be used in your Event page, once you have finished the webinar setup.</p>
+        <button class="preview-btn">BTN</button>
+      </div>
+    </div>
+  </div>
+</div>

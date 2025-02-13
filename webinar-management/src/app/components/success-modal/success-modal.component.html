@@ -1,0 +1,38 @@
+<div class="success-modal">
+  <div class="modal-header">
+    <!-- <img src="assets/images/streavent-logo.png" alt="Streavent" class="logo"> -->
+    <button class="close-button" mat-icon-button (click)="goHome()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="modal-content">
+    <h2>Congratulations John!</h2>
+    <p class="subtitle">Your event is created successfully</p>
+
+    <div class="illustration">
+      <!-- <img src="assets/images/success-illustration.svg" alt="Success"> -->
+    </div>
+
+    <p class="message">
+      Feel free to tweak your page to match what you need and want. Just make sure all the changes fit your style and goals!
+    </p>
+
+    <div class="steps">
+      <p class="steps-title">Spread the word, with 2 more steps:</p>
+      <ul>
+        <li>Personalize your event page</li>
+        <li>Publish!</li>
+      </ul>
+    </div>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="previewEvent()">
+        Preview Event's Page
+      </button>
+      <button mat-button (click)="goHome()">
+        Go Home Instead
+      </button>
+    </div>
+  </div>
+</div>

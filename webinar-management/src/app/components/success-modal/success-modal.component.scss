@@ -1,0 +1,85 @@
+.success-modal {
+  padding: 24px;
+  max-width: 500px;
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    .logo {
+      height: 32px;
+    }
+  }
+
+  .modal-content {
+    text-align: center;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    .illustration {
+      margin: 24px 0;
+      img {
+        max-width: 300px;
+      }
+    }
+
+    .message {
+      color: #666;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .steps {
+      text-align: left;
+      margin: 24px 0;
+
+      .steps-title {
+        color: #333;
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+          position: relative;
+          padding-left: 24px;
+          margin-bottom: 8px;
+          color: #666;
+
+          &:before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: #4CAF50;
+          }
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 32px;
+
+      button {
+        min-width: 150px;
+      }
+    }
+  }
+}

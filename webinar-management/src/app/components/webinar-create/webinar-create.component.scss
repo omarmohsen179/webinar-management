@@ -1,0 +1,262 @@
+.webinar-create-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+
+  header {
+    margin-bottom: 32px;
+
+    h1 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    p {
+      color: #666;
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+}
+
+.stepper-container {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 48px;
+  background: #fff;
+}
+
+.stepper-progress {
+  min-width: 300px;
+  padding: 32px 24px;
+  background: #f8f9fa;
+  border-radius: 8px;
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 52px;
+      width: 2px;
+      height: calc(100% - 32px);
+      background: #e9ecef;
+    }
+
+    &.active {
+      .step-number {
+        background: #67b231;
+        color: white;
+      }
+
+      .step-content {
+        h3 {
+          color: #67b231;
+        }
+      }
+
+      &::after {
+        background: #67b231;
+      }
+    }
+
+    .step-number {
+      width: 41px;
+      height: 40px;
+      border-radius: 50%;
+      background: #e9ecef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      color: #666;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .step-content {
+      padding-top: 8px;
+
+      h3 {
+        font-size: 15px;
+        font-weight: 500;
+        margin: 0 0 4px 0;
+        color: #1a1a1a;
+      }
+
+      p {
+        font-size: 13px;
+        color: #666;
+        margin: 0;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+.form-content {
+  flex: 1;
+  padding: 32px;
+
+  h2 {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 16px 0;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+    color: #1a1a1a;
+  }
+
+  p {
+    color: #666;
+    font-size: 14px;
+    margin: 0 0 24px 0;
+  }
+}
+
+// Form field styles
+:host ::ng-deep {
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    background: white;
+  }
+
+  // Radio button styles
+  .mat-radio-group {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e9ecef;
+
+  button {
+    min-width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 14px;
+
+    &.continue-button {
+      background: #67b231;
+      color: white;
+      padding: 0 32px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 5px;
+      &:hover {
+        background: darken(#67b231, 5%);
+      }
+
+      &::after {
+        content: "→";
+        font-size: 18px;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Form inputs
+.form-field {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .stepper-container {
+    flex-direction: column;
+  }
+
+  .stepper-progress {
+    min-width: auto;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+
+  .form-content {
+    padding: 24px;
+  }
+}
+
+::ng-deep .success-snackbar {
+  background: #4CAF50;
+  color: white;
+  min-width: 400px !important;
+  
+  .success-message {
+    text-align: center;
+    
+    h3 {
+      margin: 0 0 8px 0;
+      font-weight: 500;
+    }
+    
+    p {
+      margin: 4px 0;
+    }
+  }
+
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+::ng-deep .error-snackbar {
+  background: #F44336;
+  color: white;
+
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}

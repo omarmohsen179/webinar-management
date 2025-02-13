@@ -1,0 +1,100 @@
+.basic-info-container {
+//   max-width: 600px;
+//   margin: 0 auto;
+
+  .step-header {
+    margin-bottom: 32px;
+
+    .step-number {
+      color: #666;
+      font-size: 14px;
+    }
+
+    h2 {
+      margin: 8px 0;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .step-description {
+      color: #666;
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+
+  .form-field {
+    margin-bottom: 24px;
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-size: 14px;
+    }
+
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  .radio-group {
+    mat-radio-button {
+      margin-right: 24px;
+    }
+  }
+
+  .time-duration-container {
+    display: flex;
+    gap: 24px;
+
+    .time-field {
+      flex: 1;
+    }
+
+    .duration-field {
+      flex: 1;
+    }
+  }
+
+  .navigation-buttons {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+
+    .next-button {
+      padding: 0 32px;
+      height: 48px;
+      background-color: #2196F3;
+      color: white;
+
+      mat-icon {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+// Material Form Field Customization
+::ng-deep {
+  .mat-mdc-form-field-appearance-outline {
+    .mat-mdc-form-field-outline {
+      background-color: #fff;
+    }
+  }
+
+  .mat-mdc-radio-button {
+    .mdc-form-field {
+      label {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Make inputs and selects consistent height
+::ng-deep .mat-mdc-form-field {
+  .mat-mdc-form-field-flex {
+    height: 56px;
+  }
+}

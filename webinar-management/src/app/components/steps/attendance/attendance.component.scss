@@ -1,0 +1,93 @@
+.attendance-container {
+//   padding: 24px;
+//   max-width: 800px;
+
+  h2 {
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    margin-bottom: 16px;
+  }
+}
+
+.registration-options {
+  margin-top: 32px;
+}
+
+.registration-type-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.registration-option {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #197DD2;
+    background: #f8f9fa;
+  }
+
+  .mat-radio-label {
+    width: 100%;
+  }
+
+  .option-content {
+    margin-left: 16px;
+
+    h4 {
+      margin: 0 0 8px 0;
+      font-weight: 500;
+    }
+
+    p {
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+    }
+  }
+}
+
+.additional-settings {
+  margin-top: 32px;
+  padding: 24px;
+  background: #f8f9fa;
+  border-radius: 8px;
+
+  .setting-group {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    mat-form-field {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}
+
+// Style for selected radio option
+.mat-radio-checked {
+  .registration-option {
+    border-color: #197DD2;
+    background: #e3f2fd;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 600px) {
+  .attendance-container {
+    // padding: 16px;
+  }
+
+  .additional-settings {
+    padding: 16px;
+  }
+}

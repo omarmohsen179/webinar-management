@@ -1,0 +1,123 @@
+<div class="webinar-create-container">
+  <header>
+    <h1>Create Webinar</h1>
+    <p>
+      You're on your way to hosting an incredible webinar! Follow these four
+      simple steps to set up your event with ease.
+    </p>
+  </header>
+
+  <form [formGroup]="webinarForm" (ngSubmit)="onSubmit()">
+    <!-- Replace mat-stepper with custom stepper layout -->
+    <div class="stepper-container">
+      <!-- Progress sidebar -->
+      <div class="stepper-progress">
+        <div class="step" [class.active]="currentStep >= 1">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Basic Information</h3>
+            <p>First, we'll start with the essentials</p>
+          </div>
+        </div>
+        <div class="step" [class.active]="currentStep >= 2">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Event Branding</h3>
+            <p>Let's give your event a splash of color</p>
+          </div>
+        </div>
+        <div class="step" [class.active]="currentStep >= 3">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Who can Attend?</h3>
+            <p>Select how participants will join your event</p>
+          </div>
+        </div>
+        <div class="step" [class.active]="currentStep >= 4">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Additional Information</h3>
+            <p>Finally, let's add some details</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main content area -->
+      <div class="form-content">
+        <div [ngSwitch]="currentStep">
+          <div *ngSwitchCase="1">
+            <h2>Step {{ currentStep }} of 4</h2>
+            <h3>Basic Information</h3>
+            <p>Let's start with the basics to get your event up and running!</p>
+            <app-basic-info [parentForm]="basicInfoForm"></app-basic-info>
+            <div class="step-actions">
+              <button mat-button (click)="nextStep()" class="continue-button">
+                Continue to Event Branding
+              </button>
+            </div>
+          </div>
+
+          <!-- Similar structure for other steps -->
+          <div *ngSwitchCase="2">
+            <h2>Step {{ currentStep }} of 4</h2>
+            <h3>Event Branding</h3>
+            <p>
+              Make it yours! Choose the domain and colors that reflect your
+              event's unique style.
+            </p>
+            <app-branding [parentForm]="brandingForm"></app-branding>
+            <div class="step-actions">
+              <button mat-button (click)="previousStep()">Back</button>
+              <button mat-button (click)="nextStep()" class="continue-button">
+                Continue to Attendance
+              </button>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="3">
+            <h2>Step {{ currentStep }} of 4</h2>
+            <h3>Who can Attend?</h3>
+            <p>
+              Choose how attendees will register for your event - whether
+              through email verification, ticket purchase, custom form
+              registration, or by uploading a list of invited participants.
+            </p>
+
+            <app-attendance [parentForm]="attendanceForm"></app-attendance>
+            <div class="step-actions">
+              <button mat-button (click)="previousStep()">Back</button>
+              <button mat-button (click)="nextStep()" class="continue-button">
+                Continue to Additional Information
+              </button>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="4">
+            <h2>Step {{ currentStep }} of 4</h2>
+            <h3>Additional Information</h3>
+            <p>
+              Complete your setup by adding the event description, organizer
+              details, and support contact for a polished finish!
+            </p>
+
+            <app-additional-info
+              [parentForm]="additionalInfoForm"
+            ></app-additional-info>
+            <div class="step-actions">
+              <button mat-button (click)="previousStep()">Back</button>
+              <button
+                mat-raised-button
+                color="primary"
+                type="submit"
+                [disabled]="!webinarForm.valid || isSubmitting"
+                class="create-button"
+              >
+                {{ isSubmitting ? "Creating..." : "Create Webinar" }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
