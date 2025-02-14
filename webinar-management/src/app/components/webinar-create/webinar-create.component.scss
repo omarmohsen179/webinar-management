@@ -3,25 +3,7 @@
   max-width: 1200px;
   margin: 0 auto;
   background: #fff;
-
-  header {
-    margin-bottom: 32px;
-
-    h1 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #1a1a1a;
-    }
-
-    p {
-      color: #666;
-      font-size: 14px;
-      margin: 0;
-    }
-  }
 }
-
 .stepper-container {
   display: flex;
   flex-direction: row-reverse;
@@ -219,9 +201,7 @@
   }
 
   .stepper-progress {
-    min-width: auto;
-    border-radius: 8px;
-    margin-bottom: 24px;
+    display: none;
   }
 
   .form-content {
@@ -230,18 +210,18 @@
 }
 
 ::ng-deep .success-snackbar {
-  background: #4CAF50;
+  background: #4caf50;
   color: white;
   min-width: 400px !important;
-  
+
   .success-message {
     text-align: center;
-    
+
     h3 {
       margin: 0 0 8px 0;
       font-weight: 500;
     }
-    
+
     p {
       margin: 4px 0;
     }
@@ -253,7 +233,7 @@
 }
 
 ::ng-deep .error-snackbar {
-  background: #F44336;
+  background: #f44336;
   color: white;
 
   .mat-simple-snackbar-action {

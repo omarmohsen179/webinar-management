@@ -10,43 +10,5 @@
         </div>
       </mat-radio-button>
     </mat-radio-group>
-
-    <div class="additional-settings" [formGroup]="parentForm">
-      <div class="setting-group">
-        <mat-form-field appearance="outline">
-          <mat-label>Maximum Attendees</mat-label>
-          <input matInput
-                 type="number"
-                 formControlName="maxAttendees"
-                 min="1"
-                 max="10000">
-          <mat-hint>Leave empty for unlimited attendees</mat-hint>
-        </mat-form-field>
-      </div>
-
-      <div class="setting-group">
-        <mat-checkbox formControlName="requireApproval">
-          Require approval for registrations
-        </mat-checkbox>
-      </div>
-
-      <div class="setting-group">
-        <mat-checkbox formControlName="allowWaitlist">
-          Enable waitlist when maximum attendees is reached
-        </mat-checkbox>
-      </div>
-
-      <div class="setting-group">
-        <mat-form-field appearance="outline">
-          <mat-label>Registration Deadline</mat-label>
-          <input matInput
-                 [matDatepicker]="picker"
-                 formControlName="registrationDeadline">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-          <mat-hint>Optional: Set a deadline for registration</mat-hint>
-        </mat-form-field>
-      </div>
-    </div>
   </div>
 </div>

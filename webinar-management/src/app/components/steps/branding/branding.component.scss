@@ -31,12 +31,12 @@
 
 .colors-section {
   margin-top: 32px;
-
+  width: 100%;
   .colors-grid {
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    // gap: 24px;
-    // margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 16px;
   }
 }
 
@@ -86,23 +86,25 @@
 }
 
 .preview-section {
-  margin-top: 32px;
-  background-color: #f5f5f5;
-  padding: 24px;
   border-radius: 8px;
-
+  max-width: 300px;
   .preview-card {
-    max-width: 300px;
-    margin: 0 auto;
-    text-align: center;
+    // margin: 0 auto;
+
+    // text-align: center;
+  }
+  .preview-image {
+    width: 100%;
   }
 
   .preview-text {
     margin: 16px 0;
     color: #666;
+    padding: 5px;
   }
 
   .preview-btn {
+    margin: 5px;
     padding: 8px 24px;
     border: none;
     border-radius: 4px;
@@ -110,4 +112,10 @@
     color: white;
     cursor: pointer;
   }
+}
+
+.branding-content-wrapper {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
 }

@@ -19,6 +19,7 @@ import { AttendanceComponent } from '../steps/attendance/attendance.component';
 import { AdditionalInfoComponent } from '../steps/additional-info/additional-info.component';
 import { BrandingComponent } from "../steps/branding/branding.component";
 import { SuccessModalComponent } from '../success-modal/success-modal.component';
+import { PageHeaderComponent } from '../../shared/page-header/page-header.component';
 
 @Component({
   selector: 'app-webinar-create',
@@ -38,10 +39,11 @@ import { SuccessModalComponent } from '../success-modal/success-modal.component'
     AttendanceComponent,
     AdditionalInfoComponent,
     BrandingComponent,
-    SuccessModalComponent
+    SuccessModalComponent,
+    PageHeaderComponent,
   ],
   templateUrl: './webinar-create.component.html',
-  styleUrl: './webinar-create.component.scss'
+  styleUrl: './webinar-create.component.scss',
 })
 export class WebinarCreateComponent {
   webinarForm!: FormGroup;
@@ -129,9 +131,10 @@ export class WebinarCreateComponent {
         next: (response) => {
           // Open the success modal
           const dialogRef = this.dialog.open(SuccessModalComponent, {
-            width: '500px',
+            width: '800px',
             disableClose: true,
-            data: { webinarId: response.id }
+            // height: '600px',
+            data: { webinarId: response.id },
           });
 
           // Handle modal close actions

@@ -1,12 +1,8 @@
+<app-page-header
+  title="Create Webinar"
+  description="You're on your way to hosting an incredible webinar! Follow these four simple steps to set up your event with ease."
+></app-page-header>
 <div class="webinar-create-container">
-  <header>
-    <h1>Create Webinar</h1>
-    <p>
-      You're on your way to hosting an incredible webinar! Follow these four
-      simple steps to set up your event with ease.
-    </p>
-  </header>
-
   <form [formGroup]="webinarForm" (ngSubmit)="onSubmit()">
     <!-- Replace mat-stepper with custom stepper layout -->
     <div class="stepper-container">

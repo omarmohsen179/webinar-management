@@ -4,6 +4,8 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-branding',
@@ -13,10 +15,12 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
   ],
   templateUrl: './branding.component.html',
-  styleUrl: './branding.component.scss'
+  styleUrl: './branding.component.scss',
 })
 export class BrandingComponent {
   @Input() parentForm!: FormGroup;

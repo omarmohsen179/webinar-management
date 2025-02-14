@@ -55,6 +55,16 @@
     .duration-field {
       flex: 1;
     }
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 0;
+
+      .time-field,
+      .duration-field {
+        width: 100%;
+      }
+    }
   }
 
   .navigation-buttons {
