@@ -64,19 +64,11 @@ const Webinar = mongoose.model('Webinar', webinarSchema);
 
 // Validation middleware
 const validateWebinar = (req, res, next) => {
-  const { name, startDate, endDate } = req.body;
-  
-  // if (!name?.trim()) {
-  //   return res.status(400).json({ message: "Webinar name is required" });
-  // }
-  
-  // if (!startDate || !endDate) {
-  //   return res.status(400).json({ message: "Start and end dates are required" });
-  // }
-  
-  // if (new Date(startDate) >= new Date(endDate)) {
-  //   return res.status(400).json({ message: "End date must be after start date" });
-  // }
+  const { basicInfo } = req.body;
+  console.log(req.body);
+  if (!basicInfo.title?.trim()) {
+    return res.status(400).json({ message: "Webinar name is required" });
+  }
   
   next();
 };
